@@ -12,7 +12,7 @@
 	url = https://github.com/neoclide/coc.nvim.git
 [submodule ".vim/pack/plugins/start/vim-commentary"]
 	path = .vim/pack/plugins/start/vim-commentary
-	url = https://github.com:tpope/vim-commentary
+	url = https://github.com/tpope/vim-commentary
 [submodule ".vim/pack/plugins/start/vim-polyglot"]
 	path = .vim/pack/plugins/start/vim-polyglot
 	url = https://github.com/sheerun/vim-polyglot
