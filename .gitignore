@@ -11,6 +11,7 @@
 !.vimrc
 !.zprofile
 !.zshrc
+!README.md
 
 # Allow the specific directories and their contents
 !.vim/
