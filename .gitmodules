@@ -4,3 +4,21 @@
 [submodule ".zsh/zsh-syntax-highlighting"]
 	path = .zsh/zsh-syntax-highlighting
 	url = https://github.com/zsh-users/zsh-syntax-highlighting
+[submodule ".vim/pack/plugins/start/.zsh/zsh-autosuggestions"]
+	path = .vim/pack/plugins/start/.zsh/zsh-autosuggestions
+	url = https://github.com/zsh-users/zsh-autosuggestions
+[submodule ".vim/pack/plugins/start/coc.nvim"]
+	path = .vim/pack/plugins/start/coc.nvim
+	url = https://github.com/neoclide/coc.nvim.git
+[submodule ".vim/pack/plugins/start/vim-commentary"]
+	path = .vim/pack/plugins/start/vim-commentary
+	url = https://github.com:tpope/vim-commentary
+[submodule ".vim/pack/plugins/start/vim-polyglot"]
+	path = .vim/pack/plugins/start/vim-polyglot
+	url = https://github.com/sheerun/vim-polyglot
+[submodule ".vim/pack/plugins/start/vim-showmarks"]
+	path = .vim/pack/plugins/start/vim-showmarks
+	url = https://github.com/jacquesbh/vim-showmarks
+[submodule ".vim/pack/plugins/start/vim-surround"]
+	path = .vim/pack/plugins/start/vim-surround
+	url = https://github.com/tpope/vim-surround
