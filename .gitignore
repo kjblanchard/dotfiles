@@ -24,3 +24,5 @@
 **/.DS_Store
 !backup_kde.sh 
 !restore_kde.sh
+!.vim/.netrwhist
+

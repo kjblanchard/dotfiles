@@ -127,6 +127,7 @@ set foldmethod=indent
 set foldlevel=0
 
 " --- Allow find to work as a file opener ---
+set path=
 set path+=**
 set wildmenu
 set wildignore+=*/node_modules/*,*/.git/*,*/build/*

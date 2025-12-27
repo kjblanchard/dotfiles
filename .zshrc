@@ -4,6 +4,7 @@
 alias nucbuntu="ssh kevin@10.0.10.194" #wired
 alias skywalker="ssh root@10.0.10.1" #openwrt
 alias spiderman="ssh root@10.0.10.186" #openmediavault
+alias vi="vim" #openmediavault
 alias ldb='lua -e "require(\"mobdebug\").listen()"'
 alias pdb='python -m pdb'
 export PATH='/home/kevin/.local/bin':/usr/local/bin:$PATH
@@ -27,7 +28,7 @@ source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 source ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 #disable print in terminal
-defaults write com.apple.terminal NSUserKeyEquivalents -dict-add "Print..." nil
+#defaults write com.apple.terminal NSUserKeyEquivalents -dict-add "Print..." nil
 #Used so that we use ninja by default
 export CMAKE_GENERATOR=Ninja
 export PATH="/opt/homebrew/opt/openjdk/bin:$PATH"
@@ -50,5 +51,8 @@ setopt histignorespace
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=#839496'
 
 alias gcam='git commit -am'
+alias dotfiles='/usr/bin/git --git-dir="$HOME/.dotfiles/" --work-tree="$HOME"'
 
+export PATH="$HOME/.pyenv/bin:$PATH"
+eval "$(pyenv init -)"
 
