@@ -7,7 +7,8 @@ set gdefault
 set encoding=utf-8
 scriptencoding utf-8
 set number
-set clipboard^=unnamed,unnamedplus
+" Don't use the system clipboard in vim
+"set clipboard^=unnamed,unnamedplus
 set mouse=a
 set ttymouse=sgr
 set cmdheight=2
@@ -88,18 +89,11 @@ command! ZoomToggle call s:ZoomToggle()
 nnoremap <silent> <Leader>z :ZoomToggle<CR>
 
 " ---------- Plugins ----------
-
-" --- Marks plugin ---
-"  Automatically show the marks
-augroup ShowMarks
-  autocmd!
-  autocmd BufReadPost * DoShowMarks
-augroup END
-
 " --- Coc.nvim and VScode like ide ---
 inoremap <silent><expr> <Tab> coc#pum#visible() ? coc#pum#confirm() : "\<Tab>"
 nmap <F2> <Plug>(coc-rename)
 nmap <F4> :wall<CR>:bufdo bd<CR>:Ex<CR>
+
 map <F5> :!make debug<CR>
 map <F7> :make build<CR>
 nnoremap <silent> <F8> :call CocActionAsync('jumpReferences')<CR>

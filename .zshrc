@@ -6,20 +6,23 @@ alias skywalker="ssh root@10.0.10.1" #openwrt
 alias spiderman="ssh root@10.0.10.186" #openmediavault
 alias ldb='lua -e "require(\"mobdebug\").listen()"'
 alias pdb='python -m pdb'
-export PATH=/usr/local/bin:$PATH
+export PATH='/home/kevin/.local/bin':/usr/local/bin:$PATH
 #Initialize pyenv for python environments
-eval "$(pyenv init -)"
+#eval "$(pyenv init -)"
+#eval "$(pyenv virtualenv-init -)"
 #Allow better history between tmux panes/windows
 setopt share_history
 setopt hist_ignore_dups
 setopt hist_ignore_space
 #Add in color for ls to see directories easier
 alias ls='ls -G'
+alias airplay='pactl load-module module-raop-discover'
 export CLICOLOR=1
 #Enable forward searching in macos, as it interferes with XON/XOFF
 stty -ixon
 #modify the zsh shell prompt
 PS1="%n@%m %1~%F{cyan}%#%f "
+PROMPT="%n@%m %1~%F{cyan}%#%f "
 source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 source ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
@@ -35,5 +38,17 @@ bindkey -e
 autoload edit-command-line
 zle -N edit-command-line
 bindkey '^X^E' edit-command-line
+
+PROMPT="%F{cyan}%n%f%F{yellow}[%~]%f%F{cyan}%% "
+HISTFILE="$HOME/.zsh_history"
+HISTSIZE=1000
+SAVEHIST=1000
+setopt appendhistory
+setopt sharehistory
+setopt histignoredups
+setopt histignorespace
+ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=#839496'
+
+alias gcam='git commit -am'
 
 
