@@ -26,7 +26,7 @@
         "backlight",
         // "keyboard-state",
         "battery",
-        // "battery#bat2",
+        "battery#bat1",
         "clock",
         "tray",
         "custom/power"
@@ -172,8 +172,8 @@
             ""
         ]
     },
-    "battery#bat2": {
-        "bat": "BAT2"
+    "battery#bat1": {
+        "bat": "BAT1"
     },
     "power-profiles-daemon": {
         "format": "{icon}",
@@ -232,7 +232,8 @@
         "menu-actions": {
             "shutdown": "hyprshutdown -t 'Shutting Down ..' --post-cmd 'shutdown -P 0'",
             "reboot": "hyprshutdown -t 'Restarting...' --post-cmd 'reboot'",
-            "suspend": "systemctl suspend",
+            "suspend": "sh -c 'hyprlock & sleep 1.0 && systemctl suspend'",
+            // "suspend": "systemctl suspend",
             "lock": "hyprlock"
             // "hibernate": "systemctl hibernate"
         }

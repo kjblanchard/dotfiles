@@ -17,23 +17,22 @@ run this command:
 
 
 ## Install COC stuff
+- need to run npm -ci inside of the coc vim extension folder
 
-✅ Installed Language Servers (with install commands)
-C / C++ — clangd
+## Installed Language Servers (with install commands)
 
-    Debian install: sudo apt install clangd
+### C / C++ — clangd
 
-    CoC extension: :CocInstall coc-clangd
+- install: sudo apt install clangd
+- CoC extension: :CocInstall coc-clangd
 
-CMake — cmake-language-server
+### CMake — cmake-language-server
 
     Install: pip install cmake-language-server
 
 Python — jedi-language-server
 
-    Install: pip install jedi-language-server
-
-    Optional CoC extension: :CocInstall coc-pyright
+    CoC extension: :CocInstall coc-pyright
 
 YAML — yaml-language-server
 

@@ -64,6 +64,7 @@ map <F7> :make build<CR>
 nnoremap <leader>' :vsplit<CR>
 nnoremap <leader>5 :split<CR>
 nnoremap <leader>t :tabnew<CR>
+nnoremap <leader>n :tabnext<CR>
 
 
 
@@ -83,7 +84,8 @@ set foldopen-=hor
 set foldopen-=block
 set foldopen-=search
 set foldmethod=indent
-set foldlevel=0
+set nofoldenable    " disable folding
+" set foldlevel=0
 
 " --- Allow find to work as a file opener ---
 set path=
@@ -156,7 +158,7 @@ endfunction
 inoremap <silent><expr> <Tab> coc#pum#visible() ? coc#pum#confirm() : "\<Tab>"
 nmap <F2> <Plug>(coc-rename)
 nnoremap <silent> <F8> :call CocActionAsync('jumpReferences')<CR>
-nnoremap <leader>o:CocList outline<CR>
+nnoremap <leader>o :CocList outline<CR>
 nnoremap <leader>k :call CocAction('doHover')<CR>
 nnoremap <leader>f :call CocAction('format')<CR>
 vnoremap <leader>f :call CocAction('format')<CR>
@@ -173,7 +175,7 @@ smap <silent><expr> <TAB> coc#rpc#request('doKeymap', ['snippets-expand-jump',''
 nnoremap <silent> <leader>[ <Plug>(coc-diagnostic-prev)
 nnoremap <silent> <leader>] <Plug>(coc-diagnostic-next)
 nnoremap <silent> <leader>a <Plug>(coc-codeaction)
-nnoremap <silent> <leader>qf <Plug>(coc-fix-current)
+nnoremap <silent> <leader>gqf <Plug>(coc-fix-current)
 nnoremap <silent> <leader>rr <Plug>(coc-refactor)
 nnoremap <silent> gs :call CocActionAsync('jumpDefinition', 'vsplit')<CR>
 nnoremap <silent> gS :call CocActionAsync('jumpDefinition', 'split')<CR>
