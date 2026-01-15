@@ -177,8 +177,8 @@ nnoremap <silent> <leader>] <Plug>(coc-diagnostic-next)
 nnoremap <silent> <leader>a <Plug>(coc-codeaction)
 nnoremap <silent> <leader>gqf <Plug>(coc-fix-current)
 nnoremap <silent> <leader>rr <Plug>(coc-refactor)
-nnoremap <silent> gs :call CocActionAsync('jumpDefinition', 'vsplit')<CR>
-nnoremap <silent> gS :call CocActionAsync('jumpDefinition', 'split')<CR>
+nnoremap <silent> <leader>gs :call CocActionAsync('jumpDefinition', 'vsplit')<CR>
+nnoremap <silent> <leader>gS :call CocActionAsync('jumpDefinition', 'split')<CR>
 nnoremap <silent> <leader>gr :CocList references<CR>
 
 
