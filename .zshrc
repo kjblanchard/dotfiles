@@ -63,3 +63,11 @@ source <(fzf --zsh)
 eval "$(zoxide init zsh)"
 alias loff='hyprctl keyword monitor "eDP-1, disable"'
 alias lon='hyprctl keyword monitor "eDP-1, preferred, auto, auto"'
+ss() {
+  if (( RANDOM % 2 )); then
+    cmatrix
+  else
+    asciiquarium
+  fi
+}
+
