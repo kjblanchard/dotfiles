@@ -9,7 +9,6 @@ alias ldb='lua -e "require(\"mobdebug\").listen()"'
 alias pdb='python -m pdb'
 alias mpp='ncmpcpp'
 alias irc='irssi'
-alias ss='cmatrix'
 export PATH='/home/kevin/.local/bin':/usr/local/bin:$PATH
 #Initialize pyenv for python environments
 #eval "$(pyenv init -)"
@@ -60,7 +59,6 @@ alias dotfiles='/usr/bin/git --git-dir="$HOME/.dotfiles/" --work-tree="$HOME"'
 export PATH="$HOME/.pyenv/bin:$PATH"
 eval "$(pyenv init -)"
 source <(fzf --zsh)
-eval "$(zoxide init zsh)"
 alias loff='hyprctl keyword monitor "eDP-1, disable"'
 alias lon='hyprctl keyword monitor "eDP-1, preferred, auto, auto"'
 ss() {
@@ -70,4 +68,3 @@ ss() {
     asciiquarium
   fi
 }
-
