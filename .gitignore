@@ -176,4 +176,7 @@ etc/clusto*.conf
 !.config/nvim/*
 !.config/waybar
 !.config/waybar/*
+!.config/shikane
+!.config/shikane/*
+!.config/pavucontrol.ini
 

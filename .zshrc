@@ -60,5 +60,6 @@ alias dotfiles='/usr/bin/git --git-dir="$HOME/.dotfiles/" --work-tree="$HOME"'
 export PATH="$HOME/.pyenv/bin:$PATH"
 eval "$(pyenv init -)"
 source <(fzf --zsh)
+eval "$(zoxide init zsh)"
 alias loff='hyprctl keyword monitor "eDP-1, disable"'
 alias lon='hyprctl keyword monitor "eDP-1, preferred, auto, auto"'

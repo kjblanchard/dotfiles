@@ -184,3 +184,9 @@ nnoremap <silent> <leader>gr :CocList references<CR>
 
 let g:lightline = {'colorscheme': 'catppuccin_mocha'}
 set noshowmode
+
+" Use ctrl-[hjkl] to select the active split!
+" nmap <silent> <leader>k :wincmd k<CR>
+" nmap <silent> <leader>j :wincmd j<CR>
+" nmap <silent> <c-h> :wincmd h<CR>
+" nmap <silent> <c-l> :wincmd l<CR>

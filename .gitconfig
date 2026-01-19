@@ -2,6 +2,7 @@
 	email = kevin@supergoon.com
 	name = Kevin Blanchard
 [alias]
+	br = branch
 	a = add
 	st = status
 	co = checkout

@@ -4,11 +4,12 @@
  * Global Tint: rgba(178, 107, 255, 0.08)
  * ----------------------------------------------------- */
 
-* {
-    font-family: "Font Awesome 7 Free", "JetBrainsMono Nerd Font",  "Font Awesome 7 Brands", "Material Design Icons", sans-serif;
-    font-size: 14px;
-    font-weight: 400;
-}
+/* * { */
+/*     font-family: "Font Awesome 7 Free", "JetBrainsMono Nerd Font",  "Font Awesome 7 Brands", "Material Design Icons", sans-serif; */
+/*     font-size: 14px; */
+/*     font-weight: 400; */
+/* } */
+* { font-family: "Noto Sans"; font-size: 13px; }
 
 /* -----------------------------------------------------
  * BAR

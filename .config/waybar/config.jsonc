@@ -1,5 +1,6 @@
 // -*- mode: jsonc -*-
 {
+    "font": "Noto Sans, Font Awesome 6 Free, Material Icons, Noto Color Emoji",
     "style": "~/.config/waybar/style.css",
     // "layer": "top", // Waybar at top layer
     // "position": "bottom", // Waybar position (top|bottom|left|right)
@@ -227,15 +228,11 @@
         "tooltip": false,
         "menu": "on-click",
         "menu-file": "$HOME/.config/waybar/power_menu.xml", // Menu file in resources folder
-        // hyprshutdown -t 'Shutting down...' --post-cmd 'shutdown -P 0'
-        // hyprshutdown -t 'Restarting...' --post-cmd 'reboot'
         "menu-actions": {
             "shutdown": "hyprshutdown -t 'Shutting Down ..' --post-cmd 'shutdown -P 0'",
             "reboot": "hyprshutdown -t 'Restarting...' --post-cmd 'reboot'",
-            "suspend": "sh -c 'hyprlock & sleep 1.0 && systemctl suspend'",
-            // "suspend": "systemctl suspend",
+            "suspend": "hyprctl dispatch exec systemctl suspend",
             "lock": "hyprlock"
-            // "hibernate": "systemctl hibernate"
         }
     },
     "hyprland/workspaces": {
