@@ -1,0 +1,9 @@
+{
+	"$schema": "https://joplinapp.org/schema/settings.json",
+	"altInstanceId": "",
+	"sync.target": 3,
+	"locale": "en_US",
+	"markdown.plugin.softbreaks": false,
+	"markdown.plugin.typographer": false,
+	"api.token": "3afa8f01549cec01681a6406c2334cec75f809004baaf2f11c695f1e53c8afbf0acded3fcbdef7badb3da61d1acdb055e7141f9839f85aa14055ae5935c1ee62"
+}

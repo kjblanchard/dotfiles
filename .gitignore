@@ -178,5 +178,8 @@ etc/clusto*.conf
 !.config/waybar/*
 !.config/shikane
 !.config/shikane/*
+!.config/joplin
+!.config/joplin/settings.json
+!.config/joplin/keymap.json
 !.config/pavucontrol.ini
 
