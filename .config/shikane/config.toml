@@ -1,0 +1,18 @@
+[[profile]]
+name = "dock"
+
+# Disable laptop panel when docked
+[[profile.output]]
+enable = false
+search = ["m=0x103D", "s=", "v=AU Optronics"]
+
+# External LG monitor
+[[profile.output]]
+enable = true
+search = ["m=27GL850", "s=003NTLE07800", "v=LG Electronics"]
+mode = "2560x1440@120Hz"
+position = "0,0"
+scale = 1.0
+transform = "normal"
+adaptive_sync = false
+
