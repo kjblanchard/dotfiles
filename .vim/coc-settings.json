@@ -8,6 +8,7 @@
     "diagnostic.enable": true,
     "diagnostic.virtualText": false,
     "diagnostic.messageTarget": "float",
+    "json.format.keepLines": true,
     // "python.pythonPath": "python3",
     // "python.jediEnabled": false,
     "ruff.enable": true,
