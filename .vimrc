@@ -1,26 +1,40 @@
 " ---------- General ----------
 let g:rainbow_active = 1
 set backspace=indent,eol,start
-set ruler
+" set ruler
+set  noruler
 set cursorline
 set gdefault
 set encoding=utf-8
 scriptencoding utf-8
-set number
+set number relativenumber
 " Don't use the system clipboard in vim
 "set clipboard^=unnamed,unnamedplus
 " set mouse=a
 if !has('nvim')
   set ttymouse=sgr
 endif
-set cmdheight=2
+set cmdheight=1
 set updatetime=300
 set shortmess+=c
-set signcolumn=yes
+set signcolumn=number
 set splitright
 set splitbelow
 set laststatus=2
-set statusline+=%F
+" Clear status line when vimrc is reloaded.
+set statusline=
+" set statusline+=%F
+" Status line left side.
+set statusline+=\ %F\ %M\ %Y\ %R
+
+" Use a divider to separate the left side from the right side.
+set statusline+=%=
+
+" Status line right side.
+set statusline+=\ ascii:\ %b\ hex:\ 0x%B\ row:\ %l\ col:\ %c\ percent:\ %p%%
+
+" Show the status on the second to last line.
+set laststatus=2
 " allow to switch buffers when not saved
 set hidden
 set showtabline=2
@@ -71,11 +85,14 @@ nnoremap <leader>n :tabnext<CR>
 " ---------- Misc ----------
 filetype plugin indent on
 syntax enable
-" colorscheme molokai
-colorscheme catppuccin_mocha
-" let g:airline_theme='minimalist'
-" let g:airline_powerline_fonts=1
-" let g:airline#extensions#tmuxline#enabled = 0
+if !has('nvim')
+  let g:molokai_original = 1
+  " let g:rehash256 = 1
+  colorscheme molokai
+  " colorscheme catppuccin_mocha
+  " let g:lightline = {'colorscheme': 'catppuccin_mocha'}
+endif
+set noshowmode
 
 " ---------- Build / Make ----------
 
@@ -138,7 +155,7 @@ autocmd BufRead,BufNewFile terraform.tfvars set filetype=terraform-vars syntax=t
 "format using COC if we have a formatter, otherwise use the built in
 "formatting for the file.
 function! FormatFallback()
-  if CocAction('hasProvider', 'format')
+  if !has('nvim') && CocAction('hasProvider', 'format')
     " Use coc.nvim formatter
     call CocAction('format')
     echo "COC format"
@@ -155,39 +172,38 @@ endfunction
 
 " ---------- Plugins ----------
 " --- Coc.nvim and VScode like ide ---
-inoremap <silent><expr> <Tab> coc#pum#visible() ? coc#pum#confirm() : "\<Tab>"
-nmap <F2> <Plug>(coc-rename)
-nnoremap <silent> <F8> :call CocActionAsync('jumpReferences')<CR>
-nnoremap <leader>o :CocList outline<CR>
-nnoremap <leader>k :call CocAction('doHover')<CR>
-nnoremap <leader>f :call CocAction('format')<CR>
-vnoremap <leader>f :call CocAction('format')<CR>
-nnoremap <leader>f :call FormatFallback()<CR>
-vnoremap <leader>f :call Fo matFallback()<CR>
-nnoremap <leader>p :Files<CR>
-nnoremap <leader>r :Rg<CR>
-nnoremap <silent> <F12> :call CocActionAsync('jumpDefinition')<CR>
-nnoremap <silent> <leader>d :call CocActionAsync('jumpDeclaration')<CR>
-imap <silent><expr> <TAB> coc#pum#visible() ? coc#pum#confirm() :
-      \ coc#expandableOrJumpable() ? "\<C-r>=coc#rpc#request('doKeymap', ['snippets-expand-jump',''])\<CR>" :
-      \ "\<Tab>"
-smap <silent><expr> <TAB> coc#rpc#request('doKeymap', ['snippets-expand-jump',''])
-nnoremap <silent> <leader>[ <Plug>(coc-diagnostic-prev)
-nnoremap <silent> <leader>] <Plug>(coc-diagnostic-next)
-nnoremap <silent> <leader>a <Plug>(coc-codeaction)
-nnoremap <silent> <leader>gqf <Plug>(coc-fix-current)
-nnoremap <silent> <leader>rr <Plug>(coc-refactor)
-nnoremap <silent> <leader>gs :call CocActionAsync('jumpDefinition', 'vsplit')<CR>
-nnoremap <silent> <leader>gS :call CocActionAsync('jumpDefinition', 'split')<CR>
-nnoremap <silent> <leader>gr :CocList references<CR>
-
-
-let g:lightline = {'colorscheme': 'catppuccin_mocha'}
-set noshowmode
+if !has('nvim')
+  inoremap <silent><expr> <Tab> coc#pum#visible() ? coc#pum#confirm() : "\<Tab>"
+  nmap <F2> <Plug>(coc-rename)
+  nnoremap <silent> <F8> :call CocActionAsync('jumpReferences')<CR>
+  nnoremap <leader>o :CocList outline<CR>
+  nnoremap <leader>k :call CocAction('doHover')<CR>
+  nnoremap <leader>f :call CocAction('format')<CR>
+  vnoremap <leader>f :call CocAction('format')<CR>
+  nnoremap <leader>f :call FormatFallback()<CR>
+  vnoremap <leader>f :call Fo matFallback()<CR>
+  nnoremap <silent> <F12> :call CocActionAsync('jumpDefinition')<CR>
+  nnoremap <silent> <leader>d :call CocActionAsync('jumpDeclaration')<CR>
+  imap <silent><expr> <TAB> coc#pum#visible() ? coc#pum#confirm() :
+        \ coc#expandableOrJumpable() ? "\<C-r>=coc#rpc#request('doKeymap', ['snippets-expand-jump',''])\<CR>" :
+        \ "\<Tab>"
+  smap <silent><expr> <TAB> coc#rpc#request('doKeymap', ['snippets-expand-jump',''])
+  nnoremap <silent> <leader>[ <Plug>(coc-diagnostic-prev)
+  nnoremap <silent> <leader>] <Plug>(coc-diagnostic-next)
+  nnoremap <silent> <leader>a <Plug>(coc-codeaction)
+  nnoremap <silent> <leader>gqf <Plug>(coc-fix-current)
+  nnoremap <silent> <leader>rr <Plug>(coc-refactor)
+  nnoremap <silent> <leader>gs :call CocActionAsync('jumpDefinition', 'vsplit')<CR>
+  nnoremap <silent> <leader>gS :call CocActionAsync('jumpDefinition', 'split')<CR>
+  nnoremap <silent> <leader>gr :CocList references<CR>
+  "fzf and file opening and finding
+  nnoremap <leader>p :Files<CR>
+  nnoremap <leader>r :Rg<CR>
+endif
 
 let $FZF_DEFAULT_OPTS="--preview-window 'right:57%' --preview 'bat --style=numbers --line-range :300 {}'
-\ --bind ctrl-y:preview-up,ctrl-e:preview-down,
-\ctrl-b:preview-page-up,ctrl-f:preview-page-down,
-\ctrl-u:preview-half-page-up,ctrl-d:preview-half-page-down,
-\shift-up:preview-top,shift-down:preview-bottom,
-\alt-up:half-page-up,alt-down:half-page-down"
+      \ --bind ctrl-y:preview-up,ctrl-e:preview-down,
+      \ctrl-b:preview-page-up,ctrl-f:preview-page-down,
+      \ctrl-u:preview-half-page-up,ctrl-d:preview-half-page-down,
+      \shift-up:preview-top,shift-down:preview-bottom,
+      \alt-up:half-page-up,alt-down:half-page-down"

@@ -61,3 +61,33 @@
 [submodule "/home/kevin/.vim/pack/plugins/start/lightline"]
 	path = /home/kevin/.vim/pack/plugins/start/lightline
 	url = https://github.com/itchyny/lightline.vim
+[submodule ".config/nvim/pack/plugins/start/fzf-lua"]
+	path = .config/nvim/pack/plugins/start/fzf-lua
+	url = https://github.com/ibhagwan/fzf-lua
+[submodule ".config/nvim/pack/plugins/start/sonokai"]
+	path = .config/nvim/pack/plugins/start/sonokai
+	url = https://github.com/sainnhe/sonokai
+[submodule ".config/nvim/pack/plugins/start/cmp-path"]
+	path = .config/nvim/pack/plugins/start/cmp-path
+	url = https://github.com/hrsh7th/cmp-path
+[submodule ".config/nvim/pack/plugins/start/cmp-nvim-lsp"]
+	path = .config/nvim/pack/plugins/start/cmp-nvim-lsp
+	url = https://github.com/hrsh7th/cmp-nvim-lsp
+[submodule ".config/nvim/pack/plugins/start/nvim-cmp"]
+	path = .config/nvim/pack/plugins/start/nvim-cmp
+	url = https://github.com/hrsh7th/nvim-cmp
+[submodule ".config/nvim/pack/plugins/start/cmp-buffer"]
+	path = .config/nvim/pack/plugins/start/cmp-buffer
+	url = https://github.com/hrsh7th/cmp-buffer
+[submodule ".config/nvim/pack/plugins/start/nvim-treesitter"]
+	path = .config/nvim/pack/plugins/start/nvim-treesitter
+	url = https://github.com/nvim-treesitter/nvim-treesitter
+[submodule ".config/nvim/pack/plugins/start/vim-commentary"]
+	path = .config/nvim/pack/plugins/start/vim-commentary
+	url = https://github.com/tpope/vim-commentary
+[submodule ".config/nvim/pack/plugins/start/vim-surround"]
+	path = .config/nvim/pack/plugins/start/vim-surround
+	url = https://github.com/tpope/vim-surround
+[submodule ".config/nvim/pack/plugins/start/fzf"]
+	path = .config/nvim/pack/plugins/start/fzf
+	url = https://github.com/junegunn/fzf
