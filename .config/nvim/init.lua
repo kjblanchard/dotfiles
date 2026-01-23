@@ -14,6 +14,15 @@ vim.api.nvim_create_autocmd("CursorHold", {
 })
 
 --fzf
+require('fzf-lua').setup({
+  keymap = {
+    builtin = {
+      ["<C-d>"] = "preview-half-page-down",
+      ["<C-u>"] = "preview-half-page-up",
+    },
+  },
+})
 vim.keymap.set("n", "<leader>p", require("fzf-lua").files)
 vim.keymap.set("n", "<leader>r", require("fzf-lua").live_grep)
+
 
