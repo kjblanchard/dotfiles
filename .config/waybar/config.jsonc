@@ -230,6 +230,7 @@
         "menu-file": "$HOME/.config/waybar/power_menu.xml", // Menu file in resources folder
         "menu-actions": {
             "shutdown": "hyprshutdown -t 'Shutting Down ..' --post-cmd 'shutdown -P 0'",
+            "logoff": "hyprshutdown",
             "reboot": "hyprshutdown -t 'Restarting...' --post-cmd 'reboot'",
             "suspend": "hyprctl dispatch exec systemctl suspend",
             "lock": "hyprlock"

@@ -1,8 +1,11 @@
-alias vi='vim'
+alias vi='nvim'
+alias vim='nvim'
 alias pdb='python -m pdb'
 alias irc='irssi'
-alias airplay='pactl load-module module-raop-discover'
+alias airplay='pactl load-module module-raop-discover; sudo systemctl start avahi-daemon'
 alias dotfiles='/usr/bin/git --git-dir="$HOME/.dotfiles/" --work-tree="$HOME"'
+alias tgpt="tgpt --provider sky --multiline"
+
 
 source <(fzf --zsh)
 source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh

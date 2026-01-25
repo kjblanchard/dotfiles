@@ -1,9 +1,15 @@
-vim.lsp.start({
-  name = "cmake",
-  cmd = { "cmake-language-server" },
-  filetypes = { 'cmake' },
-  root_markers = { 'CMakePresets.json', 'CTestConfig.cmake', '.git', 'build', 'cmake' },
-  init_options = {
-    buildDirectory = 'build',
-  },
-})
+---@brief
+---
+--- https://github.com/regen100/cmake-language-server
+---
+--- CMake LSP Implementation
+--- Doesn't work - jan 2026 kjb
+-- vim.lsp.start({
+--     name = "cmake",
+--     cmd = { 'cmake-language-server' },
+--     filetypes = { 'cmake' },
+--     root_markers = { 'CMakePresets.json', 'CTestConfig.cmake', '.git', 'build', 'cmake' },
+--     init_options = {
+--         buildDirectory = 'build',
+--     },
+-- })
