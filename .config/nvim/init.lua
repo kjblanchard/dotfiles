@@ -3,7 +3,9 @@ vim.cmd("source ~/.vimrc")
 -- vim.cmd [[colorscheme unokai]]
 -- vim.g.sonokai_style = "andromeda" -- or 'shusia', 'maia', 'espresso', "andromeda
 vim.g.sonokai_style = "espresso" -- or 'shusia', 'maia', 'espresso', "andromeda
-vim.cmd("colorscheme sonokai")
+-- vim.g.sonokai_style = "espresso" -- or 'shusia', 'maia', 'espresso', "andromeda
+-- vim.cmd("colorscheme sonokai")
+vim.cmd("colorscheme dayfox")
 require("completion")
 require("lsp")
 
@@ -40,5 +42,25 @@ require('fzf-lua').setup({
 })
 vim.keymap.set("n", "<leader>p", require("fzf-lua").files)
 vim.keymap.set("n", "<leader>r", require("fzf-lua").live_grep)
+
+-- local function update_colorscheme()
+--   local hour = tonumber(os.date("%H"))
+--   if hour >= 19 or hour < 7 then
+--     -- Night time: use dark colorscheme
+--     vim.cmd("colorscheme gruvbox")  -- replace with your preferred dark scheme
+--   else
+--     -- Day time: use light colorscheme
+--     vim.cmd("colorscheme papercolor")  -- replace with your preferred light scheme
+--   end
+-- end
+
+-- -- Run once on startup
+-- update_colorscheme()
+
+-- -- Set up a timer to check every 10 minutes
+-- local timer = vim.loop.new_timer()
+-- timer:start(0, 10 * 60 * 1000, vim.schedule_wrap(function()
+--   update_colorscheme()
+-- end))
 
 

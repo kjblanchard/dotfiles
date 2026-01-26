@@ -1,0 +1,21 @@
+vim.lsp.start({
+  name = 'clangd',
+  cmd = {'clangd',
+    '--inlay-hints=false',
+    '--compile-commands-dir=build',
+    '--compile_args_from=filesystem',
+    '--all-scopes-completion',
+    '--background-index',
+    '--clang-tidy',
+    '--cross-file-rename',
+    '--completion-parse=always',
+    '--completion-style=detailed',
+    '--function-arg-placeholders',
+    '--header-insertion-decorators',
+    '--header-insertion=never',
+    '--limit-results=0',
+    '-j=6',
+  },
+  root_dir = vim.fs.dirname(vim.fs.find({'Makefile'}, { upward = true })[1]),
+})
+

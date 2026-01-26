@@ -1,4 +1,3 @@
-// autocompletion
 {
     "signature.target": "float",
     "suggest.enablePreselect": true,
@@ -9,12 +8,7 @@
     "diagnostic.virtualText": false,
     "diagnostic.messageTarget": "float",
     "json.format.keepLines": true,
-    // "python.pythonPath": "python3",
-    // "python.jediEnabled": false,
     "ruff.enable": true,
-    // "diagnostic.virtualText": true,
-    // "diagnostic.messageTarget": "echo",
-    // "diagnostic.virtualTextPrefix": "●",
     "diagnostic.checkCurrentLine": true,
     "codeLens.enable": true,
     "inlayHint.enableParameter": true,
@@ -25,7 +19,6 @@
     "suggest.noselect": false,
     "clangd.arguments": [
         "--inlay-hints=false",
-        // "--function-arg-placeholders=0",
         "--compile-commands-dir=build",
         "--compile_args_from=filesystem",
         "--all-scopes-completion",
@@ -39,21 +32,8 @@
         "--header-insertion=never",
         "--limit-results=0",
         "-j=6",
-        // "--pch-storage=memory",
     ],
     "languageserver": {
-        // "cmake": {
-        //     "command": "cmake-language-server",
-        //     "filetypes": [
-        //         "cmake"
-        //     ],
-        //     "rootPatterns": [
-        //         "build/"
-        //     ],
-        //     "initializationOptions": {
-        //         "buildDirectory": "build"
-        //     }
-        // },
         "terraform": {
             "command": "terraform-ls",
             "args": [
@@ -66,12 +46,5 @@
             "initializationOptions": {},
             "settings": {}
         }
-        // "python": {
-        //     "command": "jedi-language-server",
-        //     "args": [],
-        //     "filetypes": [
-        //         "python"
-        //     ]
-        // }
     }
 }

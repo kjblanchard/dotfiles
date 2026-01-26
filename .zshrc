@@ -1,5 +1,4 @@
-alias vi='nvim'
-alias vim='nvim'
+alias vi='vim'
 alias pdb='python -m pdb'
 alias irc='irssi'
 alias airplay='pactl load-module module-raop-discover; sudo systemctl start avahi-daemon'
