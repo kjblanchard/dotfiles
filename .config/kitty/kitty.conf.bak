@@ -3021,6 +3021,6 @@ scrollback_pager less -r --chop-long-lines +G
 
 
 # BEGIN_KITTY_THEME
-# One Half Light
+# Everforest Light Soft
 include current-theme.conf
 # END_KITTY_THEME

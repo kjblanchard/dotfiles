@@ -57,7 +57,7 @@
 	url = https://github.com/catppuccin/vim.git
 [submodule "/home/kevin/.vim/pack/plugins/start/lightline"]
 	path = /home/kevin/.vim/pack/plugins/start/lightline
-	url = https://github.com/itchyny/lightline.vim
+	url = https://github.com/itchyny/lightline.vim.git
 [submodule ".config/nvim/pack/plugins/start/fzf-lua"]
 	path = .config/nvim/pack/plugins/start/fzf-lua
 	url = https://github.com/ibhagwan/fzf-lua
