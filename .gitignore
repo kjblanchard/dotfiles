@@ -15,6 +15,8 @@
 # Allow directories
 !.vim/
 !.vim/**
+!.tmux/
+!.tmux/**
 !.zsh/
 !.zsh/**
 !.config/

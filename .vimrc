@@ -130,7 +130,8 @@ if !has('nvim')
   " let g:molokai_original = 1
   " colorscheme molokai
   set background=dark
-  colorscheme gruvbox
+  " colorscheme gruvbox
+  colorscheme selenized
 endif
 set noshowmode
 
@@ -148,7 +149,7 @@ function! ToggleBackground()
   endif
 
   " Reload Gruvbox
-  colorscheme gruvbox
+  colorscheme selenized
 endfunction
 
 " Map it to a key (example: <F5>)
