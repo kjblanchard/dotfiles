@@ -172,6 +172,12 @@ etc/clusto*.conf
 !.config/hypr/*
 !.config/kitty
 !.config/kitty/*
+!.config/zellij
+!.config/zellij/*
+!.config/fontconfig
+!.config/fontconfig/*
+!.config/foot
+!.config/foot/*
 !.config/nvim
 !.config/nvim/*
 !.config/waybar

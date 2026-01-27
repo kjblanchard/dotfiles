@@ -3,8 +3,8 @@ nmap <F2> <Plug>(coc-rename)
 nnoremap <silent> <F8> :call CocActionAsync('jumpReferences')<CR>
 nnoremap <leader>o :CocList outline<CR>
 nnoremap <leader>k :call CocAction('doHover')<CR>
-" nnoremap <leader>f :call CocAction('format')<CR>
-" vnoremap <leader>f :call CocAction('format')<CR>
+nnoremap <leader>f :call CocAction('format')<CR>
+vnoremap <leader>f :call CocAction('format')<CR>
 nnoremap <leader>f :call FormatFallback()<CR>
 vnoremap <leader>f :call FormatFallback()<CR>
 nnoremap <silent> <F12> :call CocActionAsync('jumpDefinition')<CR>
@@ -22,23 +22,23 @@ nnoremap <silent> <leader>gs :call CocActionAsync('jumpDefinition', 'vsplit')<CR
 nnoremap <silent> <leader>gS :call CocActionAsync('jumpDefinition', 'split')<CR>
 nnoremap <silent> <leader>gr :CocList references<CR>
 
-""format using COC if we have a formatter, otherwise use the built in
-""formatting for the file.
-"function! FormatFallback()
-"  if !has('nvim') && CocAction('hasProvider', 'format')
-"    " Use coc.nvim formatter
-"    call CocAction('format')
-"    echo "COC format"
-"  else
-"    " Fallback to Vim's built-in formatting for the whole buffer
-"    let b:PlugView = winsaveview()
-"    normal! gg=G
-"    call winrestview(b:PlugView)
-"    " Fallback to Vim's built-in formatting for the whole buffer
-"    ":let b:PlugView=winsaveview()<CR>gg=G:call winrestview(b:PlugView) <CR>:echo "file indented"<CR>
-"    echo "Used Vim fallback formatter"<CR>
-"  endif
-"endfunction
+"format using COC if we have a formatter, otherwise use the built in
+"formatting for the file.
+function! FormatFallback()
+  if !has('nvim') && CocAction('hasProvider', 'format')
+    " Use coc.nvim formatter
+    call CocAction('format')
+    echo "COC format"
+  else
+    " Fallback to Vim's built-in formatting for the whole buffer
+    let b:PlugView = winsaveview()
+    normal! gg=G
+    call winrestview(b:PlugView)
+    " Fallback to Vim's built-in formatting for the whole buffer
+    :redraw
+    :echo "Used Vim fallback formatter"
+  endif
+endfunction
 
 " https://raw.githubusercontent.com/neoclide/coc.nvim/master/doc/coc-example-config.vim
 " May need for Vim (not Neovim) since coc.nvim calculates byte offset by count
