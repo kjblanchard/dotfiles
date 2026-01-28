@@ -2,7 +2,6 @@ inoremap <silent><expr> <Tab> coc#pum#visible() ? coc#pum#confirm() : "\<Tab>"
 nmap <F2> <Plug>(coc-rename)
 nnoremap <silent> <F8> :call CocActionAsync('jumpReferences')<CR>
 nnoremap <leader>o :CocList outline<CR>
-nnoremap <leader>k :call CocAction('doHover')<CR>
 nnoremap <leader>f :call CocAction('format')<CR>
 vnoremap <leader>f :call CocAction('format')<CR>
 nnoremap <leader>f :call FormatFallback()<CR>
@@ -18,9 +17,12 @@ nnoremap <silent> <leader>] <Plug>(coc-diagnostic-next)
 nnoremap <silent> <leader>a <Plug>(coc-codeaction)
 nnoremap <silent> <leader>gqf <Plug>(coc-fix-current)
 nnoremap <silent> <leader>rr <Plug>(coc-refactor)
-nnoremap <silent> <leader>gs :call CocActionAsync('jumpDefinition', 'vsplit')<CR>
-nnoremap <silent> <leader>gS :call CocActionAsync('jumpDefinition', 'split')<CR>
 nnoremap <silent> <leader>gr :CocList references<CR>
+" GoTo code navigation
+nmap <silent><nowait> gd <Plug>(coc-definition)
+nmap <silent><nowait> gy <Plug>(coc-type-definition)
+nmap <silent><nowait> gi <Plug>(coc-implementation)
+nmap <silent><nowait> gr <Plug>(coc-references)
 
 "format using COC if we have a formatter, otherwise use the built in
 "formatting for the file.
@@ -74,23 +76,6 @@ function! CheckBackspace() abort
   return !col || getline('.')[col - 1]  =~# '\s'
 endfunction
 
-" Use <c-space> to trigger completion
-if has('nvim')
-  inoremap <silent><expr> <c-space> coc#refresh()
-else
-  inoremap <silent><expr> <c-@> coc#refresh()
-endif
-
-" Use `[g` and `]g` to navigate diagnostics
-" Use `:CocDiagnostics` to get all diagnostics of current buffer in location list
-nmap <silent><nowait> [g <Plug>(coc-diagnostic-prev)
-nmap <silent><nowait> ]g <Plug>(coc-diagnostic-next)
-
-" GoTo code navigation
-nmap <silent><nowait> gd <Plug>(coc-definition)
-nmap <silent><nowait> gy <Plug>(coc-type-definition)
-nmap <silent><nowait> gi <Plug>(coc-implementation)
-nmap <silent><nowait> gr <Plug>(coc-references)
 
 " Use K to show documentation in preview window
 nnoremap <silent> K :call ShowDocumentation()<CR>
@@ -117,8 +102,8 @@ augroup end
 
 " Applying code actions to the selected code block
 " Example: `<leader>aap` for current paragraph
-xmap <leader>a  <Plug>(coc-codeaction-selected)
-nmap <leader>a  <Plug>(coc-codeaction-selected)
+" xmap <leader>a  <Plug>(coc-codeaction-selected)
+" nmap <leader>a  <Plug>(coc-codeaction-selected)
 
 " Remap keys for applying code actions at the cursor position
 nmap <leader>ac  <Plug>(coc-codeaction-cursor)
@@ -127,10 +112,6 @@ nmap <leader>as  <Plug>(coc-codeaction-source)
 " Apply the most preferred quickfix action to fix diagnostic on the current line
 nmap <leader>qf  <Plug>(coc-fix-current)
 
-" Remap keys for applying refactor code actions
-nmap <silent> <leader>re <Plug>(coc-codeaction-refactor)
-xmap <silent> <leader>r  <Plug>(coc-codeaction-refactor-selected)
-nmap <silent> <leader>r  <Plug>(coc-codeaction-refactor-selected)
 
 " Run the Code Lens action on the current line
 nmap <leader>cl  <Plug>(coc-codelens-action)
@@ -175,21 +156,43 @@ command! -nargs=0 OR   :call     CocActionAsync('runCommand', 'editor.action.org
 " provide custom statusline: lightline.vim, vim-airline
 set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
 
+nnoremap <leader>sh :vsplit \| CocCommand clangd.switchSourceHeader<CR>
+
 " Mappings for CoCList
 " Show all diagnostics
-nnoremap <silent><nowait> <space>a  :<C-u>CocList diagnostics<cr>
-" Manage extensions
-nnoremap <silent><nowait> <space>e  :<C-u>CocList extensions<cr>
+" nnoremap <silent><nowait> <space>a  :<C-u>CocList diagnostics<cr>
+" " Manage extensions
+" nnoremap <silent><nowait> <space>e  :<C-u>CocList extensions<cr>
 " Show commands
-nnoremap <silent><nowait> <space>c  :<C-u>CocList commands<cr>
+" nnoremap <silent><nowait> <space>c  :<C-u>CocList commands<cr>
 " Find symbol of current document
-nnoremap <silent><nowait> <space>o  :<C-u>CocList outline<cr>
+" nnoremap <silent><nowait> <space>o  :<C-u>CocList outline<cr>
 " Search workspace symbols
-nnoremap <silent><nowait> <space>s  :<C-u>CocList -I symbols<cr>
-" Do default action for next item
-nnoremap <silent><nowait> <space>j  :<C-u>CocNext<CR>
-" Do default action for previous item
-nnoremap <silent><nowait> <space>k  :<C-u>CocPrev<CR>
-" Resume latest coc list
-nnoremap <silent><nowait> <space>p  :<C-u>CocListResume<CR>
+" nnoremap <silent><nowait> <space>s  :<C-u>CocList -I symbols<cr>
+" " Do default action for next item
+" nnoremap <silent><nowait> <space>j  :<C-u>CocNext<CR>
+" " Do default action for previous item
+" nnoremap <silent><nowait> <space>k  :<C-u>CocPrev<CR>
+" " Resume latest coc list
+" nnoremap <silent><nowait> <space>p  :<C-u>CocListResume<CR>
 
+" Remap keys for applying refactor code actions
+" nmap <silent> <leader>re <Plug>(coc-codeaction-refactor)
+" xmap <silent> <leader>r  <Plug>(coc-codeaction-refactor-selected)
+" nmap <silent> <leader>r  <Plug>(coc-codeaction-refactor-selected)
+
+" nnoremap <silent> <leader>gs :call CocActionAsync('jumpDefinition', 'vsplit')<CR>
+" nnoremap <silent> <leader>gS :call CocActionAsync('jumpDefinition', 'split')<CR>
+" nnoremap <leader>k :call CocAction('doHover')<CR>
+"
+" Use <c-space> to trigger completion
+" if has('nvim')
+"   inoremap <silent><expr> <c-space> coc#refresh()
+" else
+"   inoremap <silent><expr> <c-@> coc#refresh()
+" endif
+"
+" Use `[g` and `]g` to navigate diagnostics
+" Use `:CocDiagnostics` to get all diagnostics of current buffer in location list
+" nmap <silent><nowait> [g <Plug>(coc-diagnostic-prev)
+" nmap <silent><nowait> ]g <Plug>(coc-diagnostic-next)

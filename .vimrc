@@ -3,12 +3,11 @@ set backspace=indent,eol,start
 " set ruler
 set noruler
 set cursorline
-set gdefault
 set encoding=utf-8
 scriptencoding utf-8
 set number relativenumber
 " Don't use the system clipboard in vim
-"set clipboard^=unnamed,unnamedplus
+set clipboard^=unnamed,unnamedplus
 " set mouse=a
 if !has('nvim')
   set ttymouse=sgr
@@ -33,9 +32,6 @@ autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
 set tabstop=4
 set shiftwidth=4
 set expandtab
-
-" " ---------- File handling ----------
-" set directory^=$HOME/tempswap//
 
 " ---------- Search ----------
 set ignorecase
@@ -64,7 +60,6 @@ nnoremap <leader>5 :split<CR>
 nnoremap <leader>t :tabnew<CR>
 nnoremap <leader>n :tabnext<CR>
 
-
 " ---------- Folds ----------
 set foldopen-=hor
 set foldopen-=block
@@ -74,12 +69,12 @@ set nofoldenable    " disable folding
 " set foldlevel=0
 
 " --- Allow find to work as a file opener ---
+" nnoremap <leader>p :find<Space>
 set path=
 set path+=**
 set wildmenu
 set wildignore+=*/node_modules/*,*/.git/*,*/build/*
 set wildignorecase
-" nnoremap <leader>p :find<Space>
 set wildoptions=pum
 set pumheight=10
 
