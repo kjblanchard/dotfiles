@@ -1,6 +1,5 @@
 " ---------- General ----------
 set backspace=indent,eol,start
-" set ruler
 set noruler
 set cursorline
 set encoding=utf-8
@@ -27,6 +26,13 @@ if has('termguicolors')
 endif
 " yml fix
 autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
+
+"popup colors fix with selenized
+augroup CocMenuColors
+  autocmd!
+  autocmd ColorScheme * highlight CocMenuSel guibg=#005f87 guifg=#ffffff ctermbg=24 ctermfg=15
+augroup END
+
 
 " ---------- Indentation ----------
 set tabstop=4
@@ -130,6 +136,7 @@ if !has('nvim')
 endif
 set noshowmode
 
+
 " Clear status line when vimrc is reloaded.
 " allow to switch buffers when not saved
 set hidden
@@ -149,5 +156,4 @@ endfunction
 
 " Map it to a key (example: <F5>)
 nnoremap <F5> :call ToggleBackground()<CR>
-
 
