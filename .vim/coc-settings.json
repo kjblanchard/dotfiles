@@ -11,8 +11,6 @@
     "ruff.enable": true,
     "diagnostic.checkCurrentLine": true,
     "codeLens.enable": true,
-    "inlayHint.enableParameter": true,
-    "inlayHint.refreshOnInsertMode": true,
     "hover.target": "float",
     "signature.enable": true,
     "suggest.snippetIndicator": "",
@@ -31,7 +29,7 @@
         "--header-insertion-decorators",
         "--header-insertion=never",
         "--limit-results=0",
-        "-j=6",
+        "-j=6"
     ],
     "languageserver": {
         "terraform": {
@@ -43,8 +41,8 @@
                 "terraform",
                 "tf"
             ],
-            "initializationOptions": {},
-            "settings": {}
+            "initializationOptions": { },
+            "settings": { }
         }
     }
 }
