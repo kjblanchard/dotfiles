@@ -1,4 +1,13 @@
 {
+    "list.floatPreview": false,
+    "list.insertMappings": {
+        "<C-n>": "do:previewdown",
+        "<C-p>": "do:previewup"
+    },
+    "list.normalMappings": {
+        "<C-n>": "do:previewdown",
+        "<C-p>": "do:previewup"
+    },
     "signature.target": "float",
     "suggest.enablePreselect": true,
     "suggest.detailField": "abbr",
@@ -43,6 +52,6 @@
             ],
             "initializationOptions": { },
             "settings": { }
-        }
+        },
     }
 }

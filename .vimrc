@@ -6,7 +6,7 @@ set encoding=utf-8
 scriptencoding utf-8
 set number relativenumber
 " Don't use the system clipboard in vim
-set clipboard^=unnamed,unnamedplus
+" set clipboard^=unnamed,unnamedplus
 " set mouse=a
 if !has('nvim')
   set ttymouse=sgr
@@ -119,12 +119,6 @@ autocmd BufRead,BufNewFile terraform.tfvars set filetype=terraform-vars syntax=t
 "  endif
 "endfunction
 
-if !has('nvim')
-  source ~/.vim/coc_config.vim
-  source ~/.vim/fzf_config.vim
-  source ~/.vim/kitty_config.vim
-  source ~/.vim/status_bar.vim
-endif
 
 filetype plugin indent on
 if !has('nvim')
@@ -135,6 +129,13 @@ if !has('nvim')
   colorscheme selenized
 endif
 set noshowmode
+
+if !has('nvim')
+  source ~/.vim/coc_config.vim
+  source ~/.vim/fzf_config.vim
+  source ~/.vim/kitty_config.vim
+  source ~/.vim/status_bar.vim
+endif
 
 
 " Clear status line when vimrc is reloaded.

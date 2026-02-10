@@ -4,6 +4,7 @@ alias irc='irssi'
 alias airplay='pactl load-module module-raop-discover; sudo systemctl start avahi-daemon'
 alias dotfiles='/usr/bin/git --git-dir="$HOME/.dotfiles/" --work-tree="$HOME"'
 alias tgpt="tgpt --provider sky --multiline"
+alias ovpn="nmcli connection import type openvpn file"
 
 
 source <(fzf --zsh)
@@ -52,7 +53,7 @@ penv() {
 #Screensavers
 ss() {
   if (( RANDOM % 2 )); then
-    cmatrix
+    cmatrix -a -b -o -u 6
   else
     asciiquarium
   fi
