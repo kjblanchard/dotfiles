@@ -30,9 +30,12 @@ run this command:
 
     Install: pip install cmake-language-server
 
-Python — jedi-language-server
+Python — pyright and ruff
 
     CoC extension: :CocInstall coc-pyright
+    CoC extension: :CocInstall coc-ruff
+    Install both of these with pip, and then use them.
+    for some reason ruff needs a local toml file for wrapping lines?  sad day
 
 YAML — yaml-language-server
 
