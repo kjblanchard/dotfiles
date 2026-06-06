@@ -4,7 +4,8 @@ set noruler
 set cursorline
 set encoding=utf-8
 scriptencoding utf-8
-set number relativenumber
+" set number relativenumber
+set number
 " Don't use the system clipboard in vim
 " set clipboard^=unnamed,unnamedplus
 " set mouse=a
@@ -123,10 +124,11 @@ autocmd BufRead,BufNewFile terraform.tfvars set filetype=terraform-vars syntax=t
 filetype plugin indent on
 if !has('nvim')
   " let g:molokai_original = 1
-  " colorscheme molokai
   set background=dark
+  " colorscheme molokai
+  colorscheme PaperColor
   " colorscheme gruvbox
-  colorscheme selenized
+  " colorscheme selenized
 endif
 set noshowmode
 
@@ -150,11 +152,13 @@ function! ToggleBackground()
   else
     set background=dark
   endif
-
-  " Reload Gruvbox
-  colorscheme selenized
+  colorscheme PaperColor
 endfunction
 
 " Map it to a key (example: <F5>)
 nnoremap <F5> :call ToggleBackground()<CR>
+
+" handle other module files
+autocmd BufNewFile,BufRead *.cppm,*.ixx,*.mpp setlocal filetype=cpp
+
 

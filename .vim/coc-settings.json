@@ -8,6 +8,8 @@
         "<C-n>": "do:previewdown",
         "<C-p>": "do:previewup"
     },
+    "python.analysis.indexing": true,
+    "python.analysis.typeCheckingMode": "basic",
     "signature.target": "float",
     "suggest.enablePreselect": true,
     "suggest.detailField": "abbr",
@@ -18,6 +20,20 @@
     "diagnostic.messageTarget": "float",
     "json.format.keepLines": true,
     "ruff.enable": true,
+
+    "ruff.lint.args": [
+        "--line-length",
+        "320"
+    ],
+    "ruff.format.args": [
+        "--line-length",
+        "320"
+    ],
+    "python.formatting.ruffArgs": [
+        "--line-length",
+        "320"
+    ],
+    "python.formatting.provider": "ruff",
     "diagnostic.checkCurrentLine": true,
     "codeLens.enable": true,
     "hover.target": "float",

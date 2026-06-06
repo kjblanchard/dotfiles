@@ -13,6 +13,7 @@ ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=#839496'
 source ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 export PATH='/home/kevin/.local/bin':/usr/local/bin:$PATH
+
 #Add in color for ls to see directories easier
 export CLICOLOR=1
 export CMAKE_GENERATOR=Ninja

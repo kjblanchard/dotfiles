@@ -1,34 +1,31 @@
-/* -----------------------------------------------------
- * Modern Purple + Black Waybar Theme — Soft Purple Tint
- * Accent: #b26bff
- * Global Tint: rgba(178, 107, 255, 0.08)
- * ----------------------------------------------------- */
-
-/* * { */
-/*     font-family: "Font Awesome 7 Free", "JetBrainsMono Nerd Font",  "Font Awesome 7 Brands", "Material Design Icons", sans-serif; */
-/*     font-size: 14px; */
-/*     font-weight: 400; */
-/* } */
-* { font-family: "Noto Sans"; font-size: 13px; }
-
-/* -----------------------------------------------------
- * BAR
- * ----------------------------------------------------- */
+* {
+    font-family: "Noto Sans";
+    /* font-size: 12.5px; */
+    font-size: 12.0px;
+}
 
 window#waybar {
-    background: rgba(50, 30, 65, 0.65); /* subtle purple tint + blur-friendly */
-    border-bottom: 1px solid rgba(178, 107, 255, 0.35);
+    /* background: rgba(30, 20, 40, 0.7); */
+    background: rgba(30, 20, 40, .99);
+    border-bottom: 1px solid rgba(178, 107, 255, 0.5);
+    /* color: #eaeaea; */
     color: #ffffff;
-    padding: 5 5px;
+    padding: 4px 8px;
 }
 
-window#waybar.hidden {
-    opacity: 0.2;
+.modules-right {
+    /* background: rgba(178, 150, 255, 0.20); */
+    background: rgba(178, 107, 255, 0.40);
+    border-radius: 10px;
+    padding: 4px 10px;
+    margin-right: 6px;
 }
 
-/* -----------------------------------------------------
- * MODULES — GLOBAL STYLE
- * ----------------------------------------------------- */
+.modules-right > widget:not(:last-child) {
+    border-right: 1px solid rgba(178, 107, 255, 0.2);
+    margin-right: 10px;
+    padding-right: 10px;
+}
 
 #clock,
 #battery,
@@ -36,159 +33,70 @@ window#waybar.hidden {
 #memory,
 #disk,
 #temperature,
-#backlight,
 #network,
 #pulseaudio,
-#wireplumber,
-#custom-media,
-#tray,
-#mode,
-#idle_inhibitor,
-#scratchpad,
-#power-profiles-daemon,
-#mpd,
-#language,
-#keyboard-state {
-    padding: 4px 12px;
-    /* margin: 0 1px; */
-
-    /* Soft purple tint */
-    background: rgba(178, 107, 255, 0.1);
-
-    border-radius: 8px;
-    color: #eaeaea;
-
-    transition: background 0.25s ease, color 0.25s ease, box-shadow 0.25s ease;
-
-    /* Subtle purple glow */
-    box-shadow: 0 0 6px rgba(178, 107, 255, 0.12);
+#tray {
+    padding: 2px 6px;
+    /* margin: 0; */
+    /* border: none; */
+    /* box-shadow: none; */
+    /* color: #dddddd; */
+    min-width: 18px;
 }
 
-/* Hover glow */
 #clock:hover,
 #battery:hover,
 #cpu:hover,
 #memory:hover,
-#disk:hover,
-#temperature:hover,
 #network:hover,
-#pulseaudio:hover,
-#tray:hover {
-    background: rgba(178, 107, 255, 0.25);
+#pulseaudio:hover {
     color: #ffffff;
-    box-shadow: 0 0 12px rgba(178, 107, 255, 0.45);
+    text-shadow: 0 0 6px rgba(178, 107, 255, 0.6);
 }
 
-/* -----------------------------------------------------
- * MODULE SEPARATORS
- * ----------------------------------------------------- */
-
-/* .modules-left > widget:not(:first-child), */
-/* .modules-center > widget:not(:first-child), */ 
-/* .modules-right > widget:not(:first-child) { */
-/*     border-left: 1px solid rgba(178, 107, 255, 0.15); */
-/*     padding-left: 10px; */
-/*     margin-left: 10px; */
-/* } */
-
-/* -----------------------------------------------------
- * WORKSPACES
- * ----------------------------------------------------- */
-
 #workspaces {
-    /* margin: 0 6px; */
-    padding-left: 30px
+    padding-left: 12px;
 }
 
 #workspaces button {
-    padding: 4px 12px;
-    margin: 0 4px;
-
-    /* Purple-tinted idle state */
-    background: rgba(178, 107, 255, 0.06);
-
+    padding: 3px 10px;
+    margin: 0 6px;
     color: #cfcfcf;
     border-radius: 6px;
-
-    transition: background 0.25s ease, color 0.25s ease, opacity 0.25s ease, box-shadow 0.25s ease;
 }
 
-/* Hover glow */
 #workspaces button:hover {
-    background: rgba(178, 107, 255, 0.25);
     color: #ffffff;
-    box-shadow: 0 0 10px rgba(178, 107, 255, 0.45);
+    background: rgba(178, 107, 255, 0.2);
 }
 
-/* Active workspace */
 #workspaces button.active {
     background: #b26bff;
     color: #0d0d0f;
     font-weight: 600;
-    box-shadow: 0 0 14px rgba(178, 107, 255, 0.75);
-    animation: workspaceFadeGlow 0.25s ease-out;
 }
 
-/* Urgent workspace */
 #workspaces button.urgent {
     background: #ff4d4d;
     color: #ffffff;
-    box-shadow: 0 0 10px rgba(255, 60, 60, 0.75);
 }
-
-/* Workspace animation */
-@keyframes workspaceFadeGlow {
-    0% {
-        opacity: 0.4;
-        box-shadow: 0 0 2px rgba(178, 107, 255, 0.2);
-    }
-    100% {
-        opacity: 1;
-        box-shadow: 0 0 14px rgba(178, 107, 255, 0.75);
-    }
-}
-
-/* -----------------------------------------------------
- * SPECIAL STATES
- * ----------------------------------------------------- */
 
 #battery.charging {
-    background: rgba(80, 200, 120, 0.35);
-    color: #ffffff;
+    color: #7CFC9F;
 }
 
 #battery.critical:not(.charging) {
-    background: rgba(255, 60, 60, 0.55);
-    color: #ffffff;
-    animation: blink 0.6s steps(2) infinite alternate;
-}
-
-@keyframes blink {
-    to { background: rgba(255, 60, 60, 1); }
+    color: #ff6b6b;
 }
 
 #network.disconnected {
-    background: rgba(255, 60, 60, 0.55);
+    color: #ff6b6b;
 }
 
 #pulseaudio.muted {
-    background: rgba(120, 120, 120, 0.25);
     color: #888;
 }
 
-#idle_inhibitor.activated {
-    background: #b26bff;
-    color: #0d0d0f;
-}
-
-/* -----------------------------------------------------
- * TRAY
- * ----------------------------------------------------- */
-
 #tray {
-    background: rgba(178, 107, 255, 0.06);
-}
-
-#tray > .needs-attention {
-    background: rgba(255, 60, 60, 0.6);
+    padding-left: 6px;
 }
